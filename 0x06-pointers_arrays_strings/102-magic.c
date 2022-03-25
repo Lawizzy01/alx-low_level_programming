@@ -21,4 +21,3 @@ int main(void)
   printf("a[2] = %d\n", a[2]);
   return (0);
 }
->>>>>>> 243762c42cd3b7ff5b1f3c921d4a646a39ad82a8
