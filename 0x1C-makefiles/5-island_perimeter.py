@@ -10,17 +10,17 @@ def island_perimeter(grid):
     Args:
         grid(list): A list of list of integers
     """
+    width = len(grid[0])
+    height = len(grid)
+    edges = 0
+    size = 0
 
-    width = 0
-    height = 0
-
-    for nested_list in grid:
-        counter = nested_list.count(1)
-        if counter == 1:
-            height += 1
-            width = 1
-        elif counter > 1:
-            height += 1
-            width = counter
-    perimeter = 2 * (height + width)
-    return perimeter
+    for i in range(height):
+        for j in range(width):
+            if grid[i][j] == 1:
+                size += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    edges += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    edges += 1
+    return size * 4 - edges * 2
